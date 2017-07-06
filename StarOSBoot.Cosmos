@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.Net.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BinFormat>elf</BinFormat>
+    <Profile>HyperV</Profile>
+    <DebugEnabled>true</DebugEnabled>
+    <DebugMode>Source</DebugMode>
+    <TraceMode>User</TraceMode>
+    <EnableGDB>False</EnableGDB>
+    <StartCosmosGDB>false</StartCosmosGDB>
+    <VMWareEdition>Player</VMWareEdition>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Description>Use Hyper-V to deploy and debug.</Description>
+    <Deployment>ISO</Deployment>
+    <Launch>HyperV</Launch>
+    <VisualStudioDebugPort>Pipe: CosmosSerial</VisualStudioDebugPort>
+    <PxeInterface>129.180.145.202</PxeInterface>
+    <VMware_Description>Use VMware Player or Workstation to deploy and debug.</VMware_Description>
+    <VMware_Deployment>ISO</VMware_Deployment>
+    <VMware_Launch>VMware</VMware_Launch>
+    <VMware_DebugEnabled>true</VMware_DebugEnabled>
+    <VMware_DebugMode>Source</VMware_DebugMode>
+    <VMware_VisualStudioDebugPort>Pipe: Cosmos\Serial</VMware_VisualStudioDebugPort>
+    <VMware_PxeInterface>129.180.145.202</VMware_PxeInterface>
+    <VMware_VMwareEdition>Player</VMware_VMwareEdition>
+    <VMware_OutputPath>bin\Debug\net462\</VMware_OutputPath>
+    <VMware_EnableGDB>False</VMware_EnableGDB>
+    <VMware_StartCosmosGDB>false</VMware_StartCosmosGDB>
+    <HyperV_Description>Use Hyper-V to deploy and debug.</HyperV_Description>
+    <HyperV_Deployment>ISO</HyperV_Deployment>
+    <HyperV_Launch>HyperV</HyperV_Launch>
+    <HyperV_DebugEnabled>true</HyperV_DebugEnabled>
+    <HyperV_DebugMode>Source</HyperV_DebugMode>
+    <HyperV_VisualStudioDebugPort>Pipe: CosmosSerial</HyperV_VisualStudioDebugPort>
+    <HyperV_PxeInterface>129.180.145.202</HyperV_PxeInterface>
+    <HyperV_VMwareEdition>Player</HyperV_VMwareEdition>
+    <HyperV_OutputPath>bin\Debug\net462\</HyperV_OutputPath>
+    <HyperV_EnableGDB>False</HyperV_EnableGDB>
+    <HyperV_StartCosmosGDB>false</HyperV_StartCosmosGDB>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="*" />
+    <Compile Remove="*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cosmos.Core.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
+    <Reference Include="Cosmos.Core.Plugs.Asm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
+    <Reference Include="Cosmos.Debug.Kernel.Plugs.Asm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
+    <Reference Include="Cosmos.System.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StarOS\StarOS.csproj">
+      <Name>StarOS</Name>
+      <Project>{5721cb15-152e-4cea-b38a-4ebb02ebba5f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(AppData)\Cosmos User Kit\Build\VSIP\Cosmos.targets" />
+</Project>
